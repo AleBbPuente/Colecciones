@@ -6,10 +6,6 @@ public class main {
         deck.initPalos();
         deck.init();
 
-        deck.shuffle();
-        deck.head();
-        deck.pick();
-        deck.hand();
-
+        deck.showMenu();
     }
 }

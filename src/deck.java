@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class deck {
 
@@ -84,4 +81,51 @@ public class deck {
         var rnd = (int)Math.floor(Math.random()*(1-juego.size()+1)+juego.size());
         return juego.get(rnd);
     }
+
+    public void showMenu(){
+        Scanner leer = new Scanner(System.in);
+
+        int opcion;
+
+        do {
+            System.out.println("Bienvenido a Poker!\n" +
+                    "Selecciona una opción:\n" +
+                    "1 Mezclar deck\n" +
+                    "2 Sacar una carta\n" +
+                    "3 Carta al azar\n" +
+                    "4 Generar una mano de 5 cartas\n" +
+                    "0 Salir");
+            System.out.print("Introduce una opcion:");
+            opcion = leer.nextInt();
+
+            switch (opcion) {
+                // Mezclar deck//
+                case 1:
+                    shuffle();
+                    break;
+                //Sacar una carta//
+                case 2:
+                    head();
+                    break;
+                //Carta al azar//
+                case 3:
+                    pick();
+                    break;
+                //Generar una mano de 5 cartas//
+                case 4:
+                    hand();
+                    break;
+                //Salir//
+                case 0:
+                    System.out.println("Hasta la proxima");
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Opción no válida\n");
+                    break;
+            }
+
+        } while (opcion != 0);
+    }
+    
 }
